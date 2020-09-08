@@ -15,22 +15,39 @@ angular.module('app').controller('HomeController', ['ExampleService', function (
 }]);
 /*--------------------- Home Component ---------------------*/
 
-/*--------------------- Settings Component ---------------------*/
-const settings = {
-    templateUrl: '',
-    controller: 'SettingsController'
+/*--------------------- TypeWords Component ---------------------*/
+const typewords = {
+    templateUrl: './typewords/typewords.html',
+    controller: 'TypeWordsController'
 }
 
-// Settings Component with Routing (Routed / Stateful)
-angular.module('app').component('settings', settings)
+// Textbox Component with Routing (Routed / Stateful)
+angular.module('app').component('appTextbox', typewords)
 
-// Settings Controller with dependency injection using $inject method
-function SettingsController(ExampleService) {
+// Textbox Controller with dependency injection using $inject method
+function TypeWordsController(ExampleService) {
 
 }
-SettingsController.$inject = ['ExampleService'];
-angular.module('app').controller('SettingsController', SettingsController);
-/*--------------------- Settings Component ---------------------*/
+TypeWordsController.$inject = ['ExampleService'];
+angular.module('app').controller('TypeWordsController', TypeWordsController);
+/*--------------------- TypeWordsController Component ---------------------*/
+
+/*--------------------- Textbox Component ---------------------*/
+const textbox = {
+    templateUrl: './textbox/textbox.html',
+    controller: 'TextboxController'
+}
+
+// Textbox Component with Routing (Routed / Stateful)
+angular.module('app').component('appTextbox', textbox)
+
+// Textbox Controller with dependency injection using $inject method
+function TextboxController(ExampleService) {
+
+}
+TextboxController.$inject = ['ExampleService'];
+angular.module('app').controller('TextboxController', TextboxController);
+/*--------------------- Textbox Component ---------------------*/
 
 /*--------------------- Example Service ---------------------*/
 function ExampleService() {
