@@ -11,7 +11,12 @@ angular.module('app').component('home', home);
 
 // Home Controller with dependency injection using the array method
 angular.module('app').controller('HomeController', ['ExampleService', function (ExampleService) {
-    this.exampleVariable = 'Hello world';
+    const $ctrl = this;
+    $ctrl.exampleVariable = 'Hello world';
+    ExampleService.getData().then(function (result) {
+        console.log(result.data);
+        $ctrl.exampleVariable = result.data.words[0];
+    })
 }]);
 /*--------------------- Home Component ---------------------*/
 
@@ -50,11 +55,19 @@ angular.module('app').controller('TextboxController', TextboxController);
 /*--------------------- Textbox Component ---------------------*/
 
 /*--------------------- Example Service ---------------------*/
-function ExampleService() {
+function ExampleService($http) {
     // Services are Singletons
     // Properties
     // Methods
+    this.getData = function () {
+        return $http({
+            method: 'GET',
+            url: 'words.json'
+        });
+    }
 }
+ExampleService.$inject = ['$http'];
+
 angular.module('app').service('ExampleService', ExampleService)
 /*--------------------- Example Service ---------------------*/
 
