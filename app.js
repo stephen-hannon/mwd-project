@@ -12,7 +12,9 @@ angular.module('app').component('home', home);
 // Home Controller with dependency injection using the array method
 angular.module('app').controller('HomeController', ['ExampleService', function (ExampleService) {
     const $ctrl = this;
+    //default writing
     $ctrl.exampleVariable = 'Hello world';
+    //Writes the text from words.json
     ExampleService.getData().then(function (result) {
         console.log(result.data);
         $ctrl.exampleVariable = result.data.words[0];
@@ -20,7 +22,7 @@ angular.module('app').controller('HomeController', ['ExampleService', function (
 }]);
 /*--------------------- Home Component ---------------------*/
 
-/*--------------------- TypeWords Component ---------------------*/
+/*--------------------- TypeWords Component ---------------------
 const typewords = {
     templateUrl: './typewords/typewords.html',
     controller: 'TypeWordsController'
@@ -35,7 +37,7 @@ function TypeWordsController(ExampleService) {
 }
 TypeWordsController.$inject = ['ExampleService'];
 angular.module('app').controller('TypeWordsController', TypeWordsController);
-/*--------------------- TypeWordsController Component ---------------------*/
+--------------------- TypeWordsController Component ---------------------*/
 
 /*--------------------- Textbox Component ---------------------*/
 const textbox = {
@@ -71,3 +73,22 @@ ExampleService.$inject = ['$http'];
 angular.module('app').service('ExampleService', ExampleService)
 /*--------------------- Example Service ---------------------*/
 
+/*--------------------- Key record ----------------------*/
+function recordType(event) {
+    //find the value of the most recent key typed
+    var key = event.keyCode;
+    console.log(key);
+    //find the text bbox value
+    var keyTyped = document.getElementById("ktype").value;
+    if(key == 13){
+        alert("You've entered: " + keyTyped);
+    }
+}
+
+/*--------------------- Key record ----------------------*/
+
+
+/*TODO
+- keylogging in list and display
+- string comparison of input box and text
+*/
