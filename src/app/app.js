@@ -2,7 +2,7 @@ angular.module('app', ['ngMaterial', 'ngMessages']);
 
 /*--------------------- Home Component ---------------------*/
 const home = {
-    templateUrl: './home/home.html',
+    templateUrl: './components/home/home.html',
     controller: 'HomeController'
 }
 
@@ -31,7 +31,7 @@ angular.module('app').controller('HomeController', ['ExampleService', function (
 
 /*--------------------- TypeWords Component ---------------------
 const typewords = {
-    templateUrl: './typewords/typewords.html',
+    templateUrl: './components/typewords/typewords.html',
     controller: 'TypeWordsController'
 }
 
@@ -48,7 +48,7 @@ angular.module('app').controller('TypeWordsController', TypeWordsController);
 
 /*--------------------- Textbox Component ---------------------*/
 const textbox = {
-    templateUrl: './textbox/textbox.html',
+    templateUrl: './components/textbox/textbox.html',
     controller: 'TextboxController',
     bindings: {
         onSubmit: '&',
