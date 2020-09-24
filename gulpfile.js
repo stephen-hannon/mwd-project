@@ -23,7 +23,7 @@ var gulp = require('gulp'),
 var argv = yargs.argv,
     root = 'src',
     dist = 'dist',
-    styles = root + '/sass/*.scss',
+    styles = root + '/css/*.css',
     scripts = 'src/app/**/*.js',
     developmentServerURL = '',
     productionServerURL = '',
@@ -198,11 +198,11 @@ gulp.task('connect-app', () => {
     });
 });
 
-// gulp.task('watch', function() {
-//     gulp.watch([styles, scripts, templates], function(event){
-//         runSequence('clean', 'scripts', 'styles', 'copy-html', 'copy-img', 'copy-fonts');
-//     });
-// });
+gulp.task('watch', function() {
+    gulp.watch([styles, scripts, ...templates], function(event){
+        runSequence('clean', 'scripts', 'styles', 'copy-html', 'copy-img', 'copy-fonts');
+    });
+});
 
 gulp.task('default', gulp.series('clean', 'scripts', 'styles', 'copy-html', 'copy-img', 'copy-fonts', 'connect-app', (done) => {
     done();
