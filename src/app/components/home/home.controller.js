@@ -1,4 +1,4 @@
-function HomeController (ExampleService) {
+function HomeController (/*ExampleService*/) {
     const $ctrl = this;
     //default writing
     $ctrl.targetText = 'Hello world';
@@ -10,10 +10,10 @@ function HomeController (ExampleService) {
         $ctrl.isMatch = (typedValue === $ctrl.targetText);
     }
     //Writes the text from words.json
-    ExampleService.getData().then(function (result) {
-        console.log(result.data);
-        $ctrl.targetText = result.data.words[0];
-    })
+    // ExampleService.getData().then(function (result) {
+    //     console.log(result.data);
+    //     $ctrl.targetText = result.data.words[0];
+    // })
 }
 
 angular

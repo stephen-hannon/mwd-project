@@ -1,4 +1,4 @@
-function TextboxController(ExampleService) {
+function TextboxController() {
     this.typedValue = '';
     this.recordType = function recordType(event) {
         //find the value of the most recent key typed var key = event.keyCode;
