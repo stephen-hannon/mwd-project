@@ -1,4 +1,4 @@
-function init(ParseProvider) {
+function init(/*ParseProvider*/) {
     // parse credentials
 }
 

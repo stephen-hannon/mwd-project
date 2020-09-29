@@ -16,4 +16,6 @@ function HomeController (ExampleService) {
     })
 }
 
-angular.module('components').controller('HomeController', HomeController);
+angular
+    .module('components.home')
+    .controller('HomeController', HomeController);

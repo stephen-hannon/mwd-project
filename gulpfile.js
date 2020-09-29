@@ -29,6 +29,7 @@ var argv = yargs.argv,
     productionServerURL = '',
     templates = ['src/app/**/*.html'],
     modules = ['@uirouter/angularjs/release/angular-ui-router.js',
+    '@uirouter/visualizer/bundles/visualizer.min.js',
     'parse/dist/parse.min.js',
     'angular-parse/angular-parse.js',
     '@fintechstudios/angularjs-mdc/dist/angularjs-mdc.min.js',
@@ -199,9 +200,10 @@ gulp.task('connect-app', () => {
 });
 
 gulp.task('watch', function() {
-    gulp.watch([styles, scripts, ...templates], function(event){
-        runSequence('clean', 'scripts', 'styles', 'copy-html', 'copy-img', 'copy-fonts');
-    });
+    gulp.watch(
+        [styles, scripts, ...templates], 
+        gulp.series('clean', 'scripts', 'styles', 'copy-html', 'copy-img', 'copy-fonts')
+    );
 });
 
 gulp.task('default', gulp.series('clean', 'scripts', 'styles', 'copy-html', 'copy-img', 'copy-fonts', 'connect-app', (done) => {
