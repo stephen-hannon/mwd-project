@@ -24,6 +24,8 @@ function HomeController (SentenceModel) {
             $ctrl.targetText = getRandomSentence($ctrl.sentences);
         }
     }
+
+    // This is loaded in the controller because in the future, we plan on having it dynamically load different difficulties
     SentenceModel.getAll().then(function (result) {
         console.log(result);
         if (!result) {
