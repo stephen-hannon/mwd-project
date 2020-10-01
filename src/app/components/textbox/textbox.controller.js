@@ -9,6 +9,7 @@ function TextboxController() {
         if(key === 13){
             // pass typedValue to parent component
             this.onSubmit({typedValue: this.typedValue});
+            this.typedValue = '';
         }
     }
 }
