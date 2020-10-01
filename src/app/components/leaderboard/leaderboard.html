@@ -1,0 +1,14 @@
+<h2>Leaderboard (top 5)</h2>
+<p ng-if="!$ctrl.leaders || !$ctrl.leaders.length">No leaders found</p>
+<table ng-if="$ctrl.leaders && $ctrl.leaders.length">
+    <tr>
+        <th>User name</th>
+        <th>Sentence</th>
+        <th>Speed (seconds)</th>
+    </tr>
+    <tr ng-repeat="leader in $ctrl.leaders">
+        <td>{{leader.userName}}</td>
+        <td>{{leader.sentence.text}}</td>
+        <td>{{leader.speed}}</td>
+    </tr>
+</table>
