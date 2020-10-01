@@ -1,5 +1,5 @@
 <div>
-    <h1> {{ $ctrl.targetText }} </h1>
+    <h1>Type this: {{ $ctrl.targetText }} </h1>
     <p>Submitted: {{ $ctrl.typedValue }} ({{ $ctrl.isMatch ? 'matches' : 'doesn\'t match' }})</p>
     <app-textbox on-submit="$ctrl.onSubmit(typedValue);"></app-textbox>
 </div>

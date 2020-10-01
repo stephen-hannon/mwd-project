@@ -24,6 +24,18 @@ class SentenceModel {
         }
     }
 
+    getAll() {
+        return new this.Parse.Query(this.New())
+            .find()
+            .then(results => {
+                results.forEach(result => {
+                    this.Parse.defineAttributes(result, this.fields);
+                });
+                return Promise.resolve(results);
+            })
+            .catch(error => Promise.reject(error));
+    }
+
     getById(id) {
         return new this.Parse.Query(this.New())
             // .include('course')
@@ -52,3 +64,7 @@ class SentenceModel {
     //         .catch(error => Promise.reject(error));
     // }
 }
+
+angular
+    .module('common')
+    .service('SentenceModel', SentenceModel);
