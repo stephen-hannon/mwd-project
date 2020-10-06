@@ -1,4 +1,4 @@
-function LoginController() {
+function LoginController(AuthService) {
     const $ctrl = this;
 
     $ctrl.$onInit = function () {
@@ -10,7 +10,11 @@ function LoginController() {
     };
 
     $ctrl.loginUser = function (event) {
-
+        event.preventDefault();
+        AuthService.login({
+            username: $ctrl.user.name,
+            password: $ctrl.user.password,
+        });
     }
 }
 

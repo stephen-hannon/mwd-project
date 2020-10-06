@@ -12,5 +12,8 @@ angular
                 url: '/',
                 redirectTo: 'home',
                 component: 'app',
+                data: {
+                    requireAuth: true
+                },
             });
     });
