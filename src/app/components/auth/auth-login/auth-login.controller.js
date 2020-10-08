@@ -10,7 +10,8 @@ function LoginController(AuthService) {
     };
 
     $ctrl.loginUser = function (event) {
-        event.preventDefault();
+        console.log('logging in', $ctrl.user, event)
+        // event.preventDefault();
         AuthService.login({
             username: $ctrl.user.name,
             password: $ctrl.user.password,

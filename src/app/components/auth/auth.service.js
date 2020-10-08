@@ -1,19 +1,23 @@
 function AuthService(Parse) {
-    this.register = function(user) {
-        var user = new Parse.user();
-        user.set('username', user.username);
-        user.set('password', user.password);
-        user.set('email', user.email);
+    this.register = function(userData) {
+        var user = new Parse.User();
+        user.set('username', userData.username);
+        user.set('password', userData.password);
+        user.set('email', userData.email);
 
-        try {
-            await user.signUp();
-        } catch (err) {
+        user.signUp().then(result => {
+            console.log('successfully signed up', result);
+        }).catch(err => {
             console.error('Unable to sign up', err);
-        }
+        })
     }
 
     this.login = function(user) {
-        await Parse.User.logIn(user.username, user.password);
+        Parse.User.logIn(user.username, user.password).then(result => {
+            console.log('successfully signed up', result);
+        }).catch(err => {
+            console.error('Unable to sign up', err);
+        })
     }
     
     this.isAuthenticated = function() {

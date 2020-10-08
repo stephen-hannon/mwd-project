@@ -1,4 +1,4 @@
 <div>
-    <auth-form user="" on-submit="" type="register"></auth-form>
+    <auth-form user="$ctrl.user" on-submit="$ctrl.registerUser($event)" type="'register'"></auth-form>
     <a ui-sref="auth.login">Already have an account? Log in.</a>
 </div>
