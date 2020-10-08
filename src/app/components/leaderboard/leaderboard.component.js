@@ -13,6 +13,7 @@ angular
     .config(function ($stateProvider) {
         $stateProvider
             .state('leaderboard', {
+                parent: 'app',
                 url: '/leaderboard',
                 component: 'leaderboard',
                 resolve: {

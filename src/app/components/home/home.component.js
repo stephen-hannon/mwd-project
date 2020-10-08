@@ -10,6 +10,7 @@ angular
     .config(function ($stateProvider) {
         $stateProvider
             .state('home', {
+                parent: 'app',
                 url: '/home',
                 component: 'home',
                 resolve: {

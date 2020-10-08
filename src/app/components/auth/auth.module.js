@@ -5,7 +5,7 @@ angular
     .run(function ($transitions, $state, AuthService) {
       $transitions.onStart({
         to: function (state) {
-          return !!(state.data && state.data.requiredAuth);
+          return !!(state.data && state.data.requireAuth);
         }
       }, function() {
         if (!AuthService.isAuthenticated()) {
