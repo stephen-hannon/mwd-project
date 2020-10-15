@@ -1,3 +1,11 @@
+## 0.5.0 (2020-10-14)
+
+### Features
+* Add authentication
+* Add registration
+* Add ability to log out
+* Add protection to app routes
+
 ## 0.4.0 (2020-09-30)
 
 ### Refactors
