@@ -9,7 +9,7 @@ function getRandomSentence(sentences){
     return sentences[value];
 }
 
-function HomeController (SentenceModel) {
+function HomeController (SentenceModel, AuthService) {
     const $ctrl = this;
     //default writing
     $ctrl.sentences = [];
@@ -23,6 +23,12 @@ function HomeController (SentenceModel) {
         if ($ctrl.isMatch == true){
             $ctrl.targetText = getRandomSentence($ctrl.sentences);
         }
+    }
+
+    $ctrl.onLogout = function() {
+        AuthService.logout();
+
+        
     }
 
     // This is loaded in the controller because in the future, we plan on having it dynamically load different difficulties
