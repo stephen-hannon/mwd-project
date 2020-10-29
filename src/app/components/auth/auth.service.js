@@ -21,7 +21,7 @@ function AuthService(Parse, $state) {
         })
     }
 
-    this.logout = function(user) {
+    this.logout = function() {
         Parse.User.logOut().then(result => {
             console.log('successfully signed out', result);
             $state.go('auth.login');
