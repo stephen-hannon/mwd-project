@@ -8,7 +8,8 @@
     "dev": "PORT=1337 node ./backend/index.js",
     "test": "./node_modules/.bin/cypress run",
     "deploy": "gulp production",
-    "cypress:open": "./node_modules/.bin/cypress open"
+    "cypress:open": "./node_modules/.bin/cypress open",
+    "lint": "eslint src/"
   },
   "repository": {
     "type": "git",
