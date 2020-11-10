@@ -1,26 +1,36 @@
+//register account and login
+describe('auth.register', () => {
+    beforeEach(() => {
+        cy.visit('/#!/auth/register');
+    });
+    //register account
+    it('registers account', () => {
+        cy.get('.username').type('faker').should('have.value', 'faker');
+        cy.get('.email').type('faker@gmail.com').should('have.value', 'faker@gmail.com');
+        cy.get('.password').type('faked').should('have.value', 'faked');
+        //cy.get('.logButton').click()
+    });
+
+});
+
 describe('auth.login', () => {
     beforeEach(() => {
         cy.visit('/#!/auth/login');
     });
 
-    it('greets with Sign in', () => {
-        cy.contains('h1', 'Log in').should('exist');
-    });
-
+    //follow register link
     it('links to auth/register', () => {
-        cy.contains('Don\'t have an account?').should('have.attr', 'ui.sref', 'auth.register')
+        cy.contains('Don\'t have an account? Create one.').should('have.attr', 'ui-sref', 'auth.register')
+        cy.get('.register-link').click()
+    });
+    
+    it('logs in', () => {
+        cy.get('.username').type('cole').should('have.value', 'cole');
+        cy.get('.password').type('password{enter}');
+        //cy.get('.error-messages').should('contain', 'Email can\'t be blank');
     });
 
-    it('requires email', () => {
-        cy.get('form').contains('Log in').click();
-        cy.get('.error-messages').should('contain', 'Email can\'t be blank');
-    });
-
-    it('requires password', () => {
-        cy.get('[data-test-email]').type('test{enter}');
-        cy.get('.error-messages').should('contain', 'Password can\'t be blank');
-    });
-
+    /*
     it('requires valid username and password', () => {
         cy.get('[data-test-email]').type('test');
         cy.get('[data-test-password]').type('invalid{enter}');
@@ -31,5 +41,5 @@ describe('auth.login', () => {
         cy.get('[data-test-email]').type('test');
         cy.get('[data-test-password]').type('correctpassword{enter}');
         cy.hash().should('eq', '#!/');
-    });
+    });*/
 });

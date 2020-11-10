@@ -1,15 +1,15 @@
 <form ng-submit="$ctrl.onSubmit($event)">
     <label>
         Username
-        <input type="text" required name="username" ng-model="$ctrl.user.name" autocomplete="username" />
+        <input class="username" type="text" required name="username" ng-model="$ctrl.user.name" autocomplete="username" />
     </label>
     <label ng-if="$ctrl.type === 'register'">
         Email
-        <input type="email" required name="email" ng-model="$ctrl.user.email" autocomplete="email"/>
+        <input class="email" type="email" required name="email" ng-model="$ctrl.user.email" autocomplete="email"/>
     </label>
     <label>
         Password
-        <input type="password" required name="password" ng-model="$ctrl.user.password" ng-autocomplete="$ctrl.type === 'login' ? 'current-password' : 'new-password'" />
+        <input class="password" type="password" required name="password" ng-model="$ctrl.user.password" ng-autocomplete="$ctrl.type === 'login' ? 'current-password' : 'new-password'" />
     </label>
-    <button>{{ $ctrl.buttonText }}</button>
+    <button class='logButton'>{{ $ctrl.buttonText }}</button>
 </form>
