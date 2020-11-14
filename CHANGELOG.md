@@ -1,5 +1,10 @@
 ## 0.6.0 (2020-11-14)
 
+### Features (Stephen)
+* Github Actions: Automatic linting (ESlint) and integration testing (Cypress)
+* Automatic production deployment
+* Automatic staging deployment on pull requests
+
 ### Features (Cole)
 * Add test to check registration and login procedures
 * Add test to check textbox functionality and determine if typing text correctly
