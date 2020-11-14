@@ -1,6 +1,6 @@
 <button type="button" ng-click="$ctrl.onLogout()">Logout</button>
 <div>
-    <h1>Type this: {{ $ctrl.targetText }} </h1>
-    <p><b>{{ $ctrl.isMatch ? 'You typed it correctly! Try again!' : 'You are a miserable failure:(' }}</b></p>
+    <h1>Type this: <span class="txt">{{ $ctrl.targetText }}</span> </h1>
+    <p><b><span class="msg">{{ $ctrl.isMatch ? 'You typed it correctly! Try again!' : 'You are a miserable failure:(' }}</span></b></p>
     <app-textbox on-submit="$ctrl.onSubmit(typedValue);"></app-textbox>
 </div>

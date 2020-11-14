@@ -30,6 +30,13 @@ describe('auth.login', () => {
         //cy.get('.error-messages').should('contain', 'Email can\'t be blank');
     });
 
+    //try make sure it doesnt accept blank fields
+    it('won\'t login if blank', () => {
+        cy.get('.password').type('{enter}');
+        //cy.get('.error-messages').should('contain', 'Email can\'t be blank');
+    });
+
+
     /*
     it('requires valid username and password', () => {
         cy.get('[data-test-email]').type('test');

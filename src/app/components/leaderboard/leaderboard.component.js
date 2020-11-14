@@ -21,7 +21,7 @@ angular
                         if (UserScoreModel.collection.length) {
                             return UserScoreModel.collection;
                         } else {
-                            return UserScoreModel.getBest(5);
+                            return UserScoreModel.getBest(10);
                         }
                     }
                 }
