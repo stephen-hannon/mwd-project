@@ -5,13 +5,16 @@ describe('auth.login', () => {
     });
 
     it('can check if text typing correct text', function () {
+        //get text to be typed
         cy.get('.txt').then(($txt) => { 
             const txt = $txt.text()
             cy.get('.tbox').type(txt).clear()
             cy.get('.txt').then(($txt) => { 
                 var txt = $txt.text()
                 txt=txt.concat('{enter}')
+                //type text
                 cy.get('.tbox').type(txt)
+                //check if correct
                 cy.contains('You typed it correctly! Try again!').should('be.visible')
             })
         })

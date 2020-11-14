@@ -1,3 +1,11 @@
+## 0.6.0 (2020-11-14)
+
+### Features (Cole)
+* Add test to check registration and login procedures
+* Add test to check textbox functionality and determine if typing text correctly
+* Add test to check leaderboard for number of items as well as ordering
+* Tests now part of CI/CD operations (Stephen's Feature)
+
 ## 0.5.0 (2020-10-14)
 
 ### Features
