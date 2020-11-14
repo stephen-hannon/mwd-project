@@ -21,3 +21,8 @@ jobs:
 
     - name: Lint
       run: npm run lint
+
+    - name: Test
+      run: |
+        npm start & npx wait-on http://localhost:8885
+        npm test

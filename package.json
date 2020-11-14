@@ -4,11 +4,10 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "start": "gulp production && node ./backend/index.js",
-    "dev": "PORT=1337 node ./backend/index.js",
-    "test": "./node_modules/.bin/cypress run",
+    "start": "gulp",
+    "test": "cypress run",
     "deploy": "gulp production",
-    "cypress:open": "./node_modules/.bin/cypress open",
+    "cypress:open": "cypress open",
     "lint": "eslint src/"
   },
   "repository": {
@@ -40,6 +39,7 @@
     "cypress": "^3.8.3",
     "del": "^2.2.1",
     "eslint": "^7.12.1",
+    "eslint-plugin-cypress": "^2.11.2",
     "gulp": "^4.0.2",
     "gulp-angular-templatecache": "^2.0.0",
     "gulp-clean-css": "^2.0.6",
@@ -57,6 +57,7 @@
     "gulp-uglify": "^2.0.0",
     "gulp-wrap": "^0.13.0",
     "path": "^0.12.7",
+    "wait-on": "^5.2.0",
     "yargs": "^5.0.0"
   }
 }
